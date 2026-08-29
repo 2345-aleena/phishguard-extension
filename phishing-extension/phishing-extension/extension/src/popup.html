@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PhishGuard</title>
+  <style>
+    body {
+      width: 300px;
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 16px;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    h1 { font-size: 16px; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }
+    .status {
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .status.safe { background: #14532d; color: #bbf7d0; }
+    .status.suspicious { background: #78350f; color: #fed7aa; }
+    .status.dangerous { background: #7f1d1d; color: #fecaca; }
+    .stats { display: flex; gap: 8px; margin-bottom: 12px; }
+    .stat-box {
+      flex: 1; background: #1e293b; border-radius: 8px;
+      padding: 10px; text-align: center;
+    }
+    .stat-num { font-size: 20px; font-weight: 700; }
+    .stat-label { font-size: 10px; color: #94a3b8; margin-top: 2px; }
+    ul { margin: 0; padding-left: 18px; font-size: 12px; color: #94a3b8; }
+    li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <h1>🛡️ PhishGuard</h1>
+  <div id="status" class="status safe">Checking current site…</div>
+  <div class="stats">
+    <div class="stat-box">
+      <div class="stat-num" id="sitesChecked">0</div>
+      <div class="stat-label">Sites checked</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" id="threatsBlocked">0</div>
+      <div class="stat-label">Threats flagged</div>
+    </div>
+  </div>
+  <ul id="reasons"></ul>
+  <script src="popup.js"></script>
+</body>
+</html>
