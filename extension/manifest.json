@@ -4,6 +4,12 @@
   "version": "0.1.0",
   "description": "Detects phishing sites in real time using on-device ML and heuristic analysis. No browsing data ever leaves your device.",
   "permissions": ["activeTab", "storage", "scripting"],
+  "web_accessible_resources": [
+    {
+      "resources": ["model/forest_model.json"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "src/background.js",
